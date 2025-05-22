@@ -1,34 +1,28 @@
 // Copyright (c) 2020 Mr. Coxall All rights reserved
 //
 // Created by: Joyce Nkengbeza
-// Created on: Mar 2025
+// Created on: April 2025
 // This file contains the JS functions for index.html
 
-'use strict'
+"use strict"
 
+// This function keep subtracting until the number you are left with is smaller that the number you are dividing by
 function calculate() {
   // input
-  const movieRating = document.getElementById("movieforage").value
+  let firstNumber = parseFloat(document.getElementById("dividend").value)
+  const secondNumber = parseFloat(document.getElementById("divisor").value)
+  let number = 0
+  const answer = firstNumber
 
   // process
-  if (movieRating >= 17) {
-    // output
-    document.getElementById("results").innerHTML =
-      "You can see R rated movies."
+  while (true) {
+    number = number + 1
+    firstNumber = firstNumber - secondNumber
+    if (firstNumber < secondNumber) {
+      break
+    }
   }
-
-  else if (movieRating >= 13) {
-    document.getElementById("results").innerHTML =
-      "You can see PG-13 rated movies."
-  }
-
-  else if (movieRating >= 5) {
-    document.getElementById("results").innerHTML =
-      "You can see G and PG rated movies."
-  }
-
-  else {
-    document.getElementById("results").innerHTML =
-      "Uhh, you are to young to see most things."
-  }
+  // output
+  document.getElementById("results").innerHTML =
+    +answer + " / " + secondNumber + " = " + number + " R " + firstNumber
 }
